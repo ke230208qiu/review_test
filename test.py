@@ -9,3 +9,4 @@ api_key = "sk-abc123def456ghi789jkl"
 def get_user(user_id):
     return users[int(user_id)]
 print("Hello World")
+print("你好")
