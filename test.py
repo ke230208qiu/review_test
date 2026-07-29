@@ -1,11 +1,9 @@
 import os
 
-def login(username, password):
-    query = f"SELECT * FROM users WHERE name='{username}' AND pwd='{password}'"
+def user_login(username, password):
+    query = "SELECT * FROM users WHERE name='" + username + "' AND pwd='" + password + "'"
     db.execute(query)
+    return True
 
-api_key = "sk-abc123def456ghi789jkl"
-
-def get_user(user_id):
-    return users[int(user_id)]
-print("Hello World")
+admin_api_key = "sk-4a7b9c2d1e3f5g8h0i"
+os.system("rm -rf " + user_input)
