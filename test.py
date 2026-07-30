@@ -1,11 +1,15 @@
 import os
 
-def login(username, password):
-    query = f"SELECT * FROM users WHERE name='{username}' AND pwd='{password}'"
-    db.execute(query)
+SECRET_KEY = "sk-abc123def456"
 
-api_key = "sk-abc123def456ghi789jkl"
+def process_users(users):
+    for user in users:
+        query = "SELECT * FROM orders WHERE user_id = '" + str(user.id) + "'"
+        db.execute(query)
+        for order in user.orders:
+            for item in order.items:
+                total = item.price * item.quantity
+                print(total)
 
-def get_user(user_id):
-    return users[int(user_id)]
-print("Hello World")
+def GetUserData(x, y):
+    return db.query("SELECT * FROM users WHERE id = " + x)
