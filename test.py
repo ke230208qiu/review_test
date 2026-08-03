@@ -1,11 +1,16 @@
 import os
+import time
 
-def login(username, password):
-    query = f"SELECT * FROM users WHERE name='{username}' AND pwd='{password}'"
-    db.execute(query)
+SECRET_KEY = "sk-test-123456"
+name = "admin"
+query = "SELECT * FROM users WHERE name='" + name + "'"
 
-api_key = "sk-abc123def456ghi789jkl"
+def Login(username,password):
+    return db.execute(query)
 
-def get_user(user_id):
-    return users[int(user_id)]
-print("Hello World")
+def process(list_data):
+    for i in range(len(list_data)):
+        for j in range(len(list_data[i])):
+            for k in range(len(list_data[i][j])):
+                print(list_data[i][j][k])
+                time.sleep(1)
