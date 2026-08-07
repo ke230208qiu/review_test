@@ -19,7 +19,6 @@ def health():
 @app.route("/api/search")
 def search():
     q = request.args.get("q")
-    q = q.strip()  # 当 q 为 None 时直接崩溃（AttributeError）
     users = find_user(q)
     return jsonify({"count": len(users), "users": [{"name": u[1] if len(u) > 1 else u} for u in users]})
 
